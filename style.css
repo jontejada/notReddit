@@ -7,8 +7,7 @@ html {
 
 
 body {
-font-family: 'Roboto', sans-serif;	/*font-size: 110%;*/
-	/*padding:20px;*/
+	font-family: 'Open Sans', sans-serif;	/*padding:20px;*/
 	/*background-color: #C3F3C0;*/
 	background: linear-gradient(to right, #C3F3C0, #88C3EA);
 	
@@ -21,20 +20,28 @@ font-family: 'Roboto', sans-serif;	/*font-size: 110%;*/
 	margin-left: auto;
 	margin-right: auto;
 	margin-top:40px;
-	display: flex;
+	/*display: flex;*/
 }
 
 #header {
 	justify-content:space-between;
 	align-items:center;
+	font-size:120%;
+	display: flex;
 }
 
 #searchsort {
 	justify-content:space-between;	
+	display: flex;
+}
+
+.fullPost {
+	width:600px;
+	display: block;
 }
 
 .left {
-	background-image: url("http://i.imgur.com/i36UbXr.jpg");
+	/*background-image: url("http://www.jontejada.com/assets/DSC_0530.jpg");*/
 	background-size: cover;
 	width:200px;
 	border-top-left-radius: 15px;
@@ -42,6 +49,7 @@ font-family: 'Roboto', sans-serif;	/*font-size: 110%;*/
 	color:white;
 	text-align: center;
 	font-size:130%;
+	text-shadow:0 0 15px rgba(0,0,0,0.3);
 }
 
 .right {
@@ -64,22 +72,57 @@ font-family: 'Roboto', sans-serif;	/*font-size: 110%;*/
 }
 
 select {
-   border: 0;
-   height: 25px;
-   background: #3cb0fd;
-   color:white;
-   }
+	border: 0;
+	height: 25px;
+	background: #3cb0fd;
+	background: rgba(136,195,234,0.9);
+	color:white;
+	font-size: 110%;
+	}
 
 select:focus {
 	outline: none;
 }
 
 .comments {
-	display: none
+	/*display: none*/
 }
 
 .ital {
-	font-weight: 500;
+	font-weight: 600;
 	font-style: italic;
 
+}
+
+h1 {
+	font-weight: 800;
+}
+
+input {
+	/*display: block;*/
+	margin: 0;
+	/*width: 100%;*/
+	font-size: 18px;
+	/*appearance: none;*/
+	/*box-shadow: none;*/
+	border-radius: 2px;
+	border: none;
+	border-bottom: solid 2px white;
+	/*transition: border 0.3s;*/
+	/*background-color: rgba(255,255,255,0.2);*/
+	background-color: rgba(136,195,234,0.9);
+	color:white;
+}
+
+input:focus {
+	outline:none;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: white;
+  text-align: center;
+}
+
+#sorting {
+	/*color:white;*/
 }
