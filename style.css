@@ -19,7 +19,7 @@ body {
 	width:600px;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top:40px;
+	margin-bottom:20px;
 	/*display: flex;*/
 }
 
@@ -64,7 +64,7 @@ body {
 	border-width: 4px;
 	border-color: white;
 	background-color:white;
-	margin-bottom: 20px; 
+	margin-top: 20px; 
 }
 
 .fa-reddit {
@@ -85,7 +85,16 @@ select:focus {
 }
 
 .comments {
-	/*display: none*/
+	background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0));
+	/*background: linear-gradient(red, yellow);*/
+	margin-top:-16px;
+	margin-left:100px;
+	width: 480px;
+	padding:10px;
+}
+
+.aComment {
+	/*padding:10px;*/
 }
 
 .ital {
@@ -112,6 +121,7 @@ input {
 	/*background-color: rgba(255,255,255,0.2);*/
 	background-color: rgba(136,195,234,0.9);
 	color:white;
+	margin:10px;
 }
 
 input:focus {
@@ -125,4 +135,37 @@ input:focus {
 
 #sorting {
 	/*color:white;*/
+}
+
+i {
+	padding-bottom: 2px;
+}
+
+::selection { background: transparent; }
+
+.fa-arrow-up:hover {
+	color:#06D6A0;
+	font-size: 125%;
+	text-shadow:0 0 15px rgba(255,255,255,0.3);
+
+}
+
+.fa-arrow-down:hover {
+	color:#F56960;
+	font-size: 125%;
+	text-shadow:0 0 15px rgba(255,255,255,0.3);
+
+}
+
+button {
+	background-color: rgb(136,195,234);
+	border-style: none;
+	height:30px;
+	color:white;
+	font-size: 120%;
+	border-radius: 4px;
+}
+
+button:focus {
+	outline:none;
 }

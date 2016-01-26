@@ -1,6 +1,13 @@
 #notReddit with angular
 
-- `ng-app="redditApp` attr in html element
-- using non-minified local copy of angular  1.5.0-rc.1 (and angular-animate) from [here](https://code.angularjs.org/1.5.0-rc.1/)
+- `ng-app="redditApp"` attr in html element
+- non-minified local copy of angular  1.5.0-rc.1 (and angular-animate) from [here](https://code.angularjs.org/1.5.0-rc.1/)
+- moment.js for date formatting
+- font-awesome for icons
+- google fonts for Open Sans font
+- styling with CSS3, using border-box and flexbox
+
+##interesting stuff
+- got rid of text highlighting with css rule `::selection { background: transparent; }` found [here](http://stackoverflow.com/questions/826782/css-rule-to-disable-text-selection-highlighting)
 
 ####started 2016-01-25

@@ -14,19 +14,47 @@
 <body ng-controller="bodyController">
 	<div class="main" id="header">
 		<h1><i class="fa fa-reddit"></i> notReddit</h1>
-		<h2><i class="fa fa-plus-circle"></i> new post</h2>
+		<h2 ng-click="showNewPost()"><i class="fa fa-plus-circle"></i> new post</h2>
 	</div>
-	<div class="main" id="searchsort">
-		<span id="sorting"><b>sort by</b>
+	<div class="main" ng-show="posts.newPostViz">
+		<h2>submit a new post:</h2>
+		<form name="newPostForm" ng-submit="addPost(newPost)">
+			<label>title
+				<input ng-model="newPost.title" type="text">
+			</label>
+			<br>
+			<label>author
+				<input ng-model="newPost.author" type="text">
+			</label>
+			<br>
+			<label>image URL
+				<input ng-model="newPost.image" type="text">
+			</label>
+			<br>
+			<label>description
+				<input ng-model="newPost.description" type="text">
+			</label>
+			<br>
+			<button type="submit" value="submit">submit</button>
+		</form>
+	</div>
+	<div class="main" id="searchsort" ng-hide="posts.newPostViz">
+		<span id="sorting">sort by
 			<select>
 				<option>votes</option>
 				<option>date</option>
 				<option>title</option>
 			</select>
 		</span>
-		<input type="text" placeholder="search" ng-model="posts.search">
+		<span>
+			<label>
+				search for 
+				<input type="text" placeholder=""  size="8" ng-model="posts.search">
+			</label>
+			<b id="clearSearch" ng-click="clearSearch()">X</b>
+		</span>
 	</div>
-	<div class="main" id="allPosts">
+	<div class="main" id="allPosts" ng-hide="posts.newPostViz">
 
 <!-- 		<div class="fullPost">
 			<div class="aPost">
@@ -61,32 +89,31 @@
  		<div class="fullPost" ng-repeat="post in posts.all | orderBy: posts.order | filter:posts.search">
 			<div class="aPost">
 				<div class="left" back-img="{{post.image}}">
-					<h1><i class="fa fa-arrow-up"></i></h1>
+					<h1 ng-click="vote(post,1)"><i class="fa fa-arrow-up"></i></h1>
 					<h1>{{post.votes}}</h1>
-					<h1><i class="fa fa-arrow-down"></i></h1>
+					<h1 ng-click="vote(post,-1)"><i class="fa fa-arrow-down"></i></h1>
 				</div>
 				<div class="right">
 					<h1>{{post.title}}</h1>
-					<h2>
+					<h4>
 						<span>{{post.date}}</span>
 						<span class="ital">{{post.author}}</span>
-					</h2>
+					</h4>
 					<p>{{post.description}}</p>
-					<h2><i class="fa fa-comments-o"></i> {{post.comments.all.length}} comments</h2>
+					<h2 ng-click="toggleCommentViz(post)"><i class="fa fa-comments-o"></i> {{post.comments.all.length}} comments</h2>
 				</div>
 			</div>
-<!--  			<div class="comments">
-				<div class="aComment">
-					<p>text text text. text. text.</p>
-					<h3>author</h3>
+ 			<div class="comments" ng-show="post.comments.allViz">
+				<div ng-repeat="comment in post.comments.all" class="aComment">
+					<p>{{comment.text}} - <i>{{comment.author}}</i></p>
 				</div>
 				<div class="newComment">
 					<label>new <input type="text" placeholder="comment"></label>
-					<label>by <input type="text" placeholder="author"></label>
+					<label>by <input type="text" size="8" placeholder="author"></label>
 					<button>submit</button>
 				</div>
 			</div>
- --> 		</div>
+ 		</div>
 	</div>
 </body>
 </html>
