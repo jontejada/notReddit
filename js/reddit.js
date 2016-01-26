@@ -6,8 +6,8 @@ app.controller('bodyController', function($scope) {
 	$scope.posts = {};
 	$scope.posts.search = "";
 	$scope.posts.newPostViz = false;
-	$scope.posts.filters = ['votes','date','title'];
-	$scope.posts.filter = $scope.posts.filters[0];
+	// $scope.posts.filters = ['votes','date','title'];
+	// $scope.posts.filter = $scope.posts.filters[0];
 	$scope.posts.order = '-votes';
 	$scope.posts.all = [
 		{
@@ -151,6 +151,18 @@ app.controller('bodyController', function($scope) {
 	$scope.vote = function(post,direction) {
 		post.votes += direction;
 	};
+	$scope.highlightUp = function(post){
+		post.highlightUp = true;
+	};
+	$scope.unhighlightUp = function(post){
+		post.highlightUp = false;
+	};
+	$scope.highlightDown = function(post){
+		post.highlightDown = true;
+	};
+	$scope.unhighlightDown = function(post){
+		post.highlightDown = false;
+	};
 	$scope.showNewPost = function() {
 		$scope.posts.newPostViz = !$scope.posts.newPostViz;
 	};
@@ -165,6 +177,10 @@ app.controller('bodyController', function($scope) {
 		$scope.posts.all.push(newPost);
 		$scope.showNewPost();
 		$scope.newPost = {};
+	};
+	$scope.addComment = function(post, newComment) {	
+		post.comments.all.push(newComment);
+		$scope.newComment = {};
 	};
 
 });

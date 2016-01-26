@@ -89,9 +89,13 @@
  		<div class="fullPost" ng-repeat="post in posts.all | orderBy: posts.order | filter:posts.search">
 			<div class="aPost">
 				<div class="left" back-img="{{post.image}}">
-					<h1 ng-click="vote(post,1)"><i class="fa fa-arrow-up"></i></h1>
+					<h1 ng-click="vote(post,1)" ng-mouseover='highlightUp(post)' ng-mouseleave='unhighlightUp(post)'>
+						<i ng-class='{green: post.highlightUp}' class="fa fa-arrow-up"></i>
+					</h1>
 					<h1>{{post.votes}}</h1>
-					<h1 ng-click="vote(post,-1)"><i class="fa fa-arrow-down"></i></h1>
+					<h1 ng-click="vote(post,-1)" ng-mouseover='highlightDown(post)' ng-mouseleave='unhighlightDown(post)'>
+						<i ng-class='{red: post.highlightDown}' class="fa fa-arrow-down"></i>
+					</h1>
 				</div>
 				<div class="right">
 					<h1>{{post.title}}</h1>
@@ -108,9 +112,11 @@
 					<p>{{comment.text}} - <i>{{comment.author}}</i></p>
 				</div>
 				<div class="newComment">
-					<label>new <input type="text" placeholder="comment"></label>
-					<label>by <input type="text" size="8" placeholder="author"></label>
-					<button>submit</button>
+					<form ng-submit="addComment(post, newComment)">
+						<label>new <input ng-model="newComment.text" type="text" placeholder="comment"></label>
+						<label>by <input ng-model="newComment.author" type="text" size="8" placeholder="author"></label>
+						<button type="submit" value="submit">submit</button>
+					</form>
 				</div>
 			</div>
  		</div>

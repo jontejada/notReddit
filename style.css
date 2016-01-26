@@ -142,15 +142,23 @@ i {
 }
 
 ::selection { background: transparent; }
-
+/*
 .fa-arrow-up:hover {
 	color:#06D6A0;
 	font-size: 125%;
 	text-shadow:0 0 15px rgba(255,255,255,0.3);
 
 }
+*/
 
-.fa-arrow-down:hover {
+.green {
+	color:#06D6A0;
+	font-size: 125%;
+	text-shadow:0 0 15px rgba(255,255,255,0.3);
+
+}
+
+.red {
 	color:#F56960;
 	font-size: 125%;
 	text-shadow:0 0 15px rgba(255,255,255,0.3);
