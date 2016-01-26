@@ -91,7 +91,7 @@ app.controller('bodyController', function($scope) {
 			author: "Sybilla Vyacheslav",
 			image:"http://www.jontejada.com/assets/DSC_0778_sq.jpg",
 			description: "Labore et ullamco kombucha. 90's ex anim, retro tilde aliquip vice sustainable duis mixtape microdosing ugh. Hashtag labore four dollar toast raw denim.",
-			votes: 40,
+			votes: 4,
 			date: moment().subtract(0,'days').subtract(8,'hours').calendar(),
 			comments: {
 				newViz: false,
@@ -115,10 +115,6 @@ app.controller('bodyController', function($scope) {
 				newViz: false,
 				allViz: false,
 				all: [
-					{
-						author: "Jon",
-						text: "cool!"
-					}
 				]
 			}
 		},
