@@ -122,10 +122,23 @@ input {
 	background-color: rgba(136,195,234,0.9);
 	color:white;
 	margin:10px;
+	text-align: center;
 }
 
 input:focus {
 	outline:none;
+}
+
+.newPostInput {
+	border:none;
+	/*font-size: 22px;*/
+	border-radius: 20px;
+	line-height: 2.5;
+}
+
+form {
+	text-align: right;
+	/*margin-right: 10px;*/
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -142,6 +155,7 @@ i {
 }
 
 ::selection { background: transparent; }
+input::selection { background: black; }
 /*
 .fa-arrow-up:hover {
 	color:#06D6A0;
@@ -176,4 +190,8 @@ button {
 
 button:focus {
 	outline:none;
+}
+
+.err {
+	color:red;
 }

@@ -119,7 +119,7 @@ app.controller('bodyController', function($scope) {
 			}
 		},
 		{
-			title: "Stormy Sea",
+			title: "Cliffs & Stormy Sea",
 			author: "Anouska Iantha",
 			image:"http://www.jontejada.com/assets/DSC_0782_sq.jpg",
 			description: "PBR&B pop-up food truck austin elit accusamus VHS pinterest, sapiente banh mi cred pug trust fund dreamcatcher skateboard. Actually cronut.",
@@ -171,8 +171,13 @@ app.controller('bodyController', function($scope) {
 			all: []
 		};
 		$scope.posts.all.push(newPost);
+		$scope.posts.order = '-date';
 		$scope.showNewPost();
 		$scope.newPost = {};
+		$scope.newPost.image = null;
+		// console.log($scope.newPost.image)
+		// debugger
+		// http://i.imgur.com/Lx4yJnk.jpg
 	};
 	$scope.addComment = function(post, newComment) {	
 		post.comments.all.push(newComment);
