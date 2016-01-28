@@ -17,7 +17,7 @@
 		<h2 ng-click="showNewPost()"><i class="fa fa-plus-circle"></i> new post</h2>
 	</div>
 	<div class="main" ng-show="posts.newPostViz">
-		<h2>submit a new post:</h2>
+		<!-- <h2>submit a new post:</h2> -->
 
  		<div class="fullPost">
 			<div class="aPost">
@@ -30,7 +30,7 @@
 						</label>
 						<br>
 						<label>author
-							<input name="author" class="newPostInput" ng-model="newPost.author" type="text">
+							<input name="author" class="newPostInput" ng-model="newPost.author" type="url">
 						</label>
 						<br>
 						<label><span class="err" ng-show="newPostForm.image.$invalid-url">(invalid) </span>image URL

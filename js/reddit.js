@@ -3,11 +3,10 @@ var app = angular.module('redditApp', []);
 app.controller('bodyController', function($scope) {
 	$scope.newComment = {};
 	$scope.newPost = {};
+	// $scope.newPost.image = 'https://www.redditstatic.com/about/assets/reddit-alien.png';
 	$scope.posts = {};
 	$scope.posts.search = "";
 	$scope.posts.newPostViz = false;
-	// $scope.posts.filters = ['votes','date','title'];
-	// $scope.posts.filter = $scope.posts.filters[0];
 	$scope.posts.order = '-votes';
 	$scope.posts.all = [
 		{
@@ -163,6 +162,7 @@ app.controller('bodyController', function($scope) {
 		$scope.posts.newPostViz = !$scope.posts.newPostViz;
 	};
 	$scope.addPost = function(newPost) {
+		// debugger
 		if (!newPost.author) {
 			newPost.author = 'anon';
 		}
@@ -178,7 +178,8 @@ app.controller('bodyController', function($scope) {
 		// $scope.newPost.image = null; //oddly necessary for invalid URLs. `='';` does not work.
 		// console.log($scope.newPost.image)
 		// debugger
-		// valid image URL: http://i.imgur.com/Lx4yJnk.jpg
+		// http://i.imgur.com/Lx4yJnk.jpg
+		// if($scope.newPost.image.$invalid) $scope.newPost.image = null;
 	};
 	$scope.addComment = function(post, newComment) {	
 		post.comments.all.push(newComment);
