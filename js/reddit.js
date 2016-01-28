@@ -163,7 +163,9 @@ app.controller('bodyController', function($scope) {
 		$scope.posts.newPostViz = !$scope.posts.newPostViz;
 	};
 	$scope.addPost = function(newPost) {
-		// console.log(newPost);
+		if (!newPost.author) {
+			newPost.author = 'anon';
+		}
 		newPost.date = moment().calendar();
 		newPost.votes = 1;
 		newPost.comments = {
@@ -174,7 +176,7 @@ app.controller('bodyController', function($scope) {
 		$scope.posts.order = '-date';
 		$scope.showNewPost();
 		$scope.newPost = {};
-		$scope.newPost.image = null;
+		// $scope.newPost.image = null;
 		// console.log($scope.newPost.image)
 		// debugger
 		// http://i.imgur.com/Lx4yJnk.jpg

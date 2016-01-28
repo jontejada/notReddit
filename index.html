@@ -21,7 +21,7 @@
 
  		<div class="fullPost">
 			<div class="aPost">
-				<div class="left">
+				<div class="left" back-img="{{newPost.image}}">
 				</div>
 				<div class="right">
 					<form id="newPostFormId" name="newPostForm" ng-submit="addPost(newPost)" novalidate>
@@ -33,7 +33,7 @@
 							<input name="author" class="newPostInput" ng-model="newPost.author" type="text">
 						</label>
 						<br>
-						<label>image URL
+						<label><span class="err" ng-show="newPostForm.image.$invalid-url">(invalid) </span>image URL
 							<input name="image" class="newPostInput" ng-model="newPost.image" type="url">
 						</label>
 						<br>
@@ -44,7 +44,7 @@
  				</div>
 			</div>
  		</div>
- 		<button form="newPostFormId" type="submit" value="submit">submit</button>
+ 		<button id="formButton" form="newPostFormId" type="submit" value="submit" ng-show="newPostForm.$valid">submit</button>
 	</div>
 	<div class="main" id="searchsort" ng-hide="posts.newPostViz">
 		<span id="sorting">sort by
@@ -93,7 +93,7 @@
 					<form ng-submit="addComment(post, newComment)">
 						<label>new <input ng-model="newComment.text" type="text" placeholder="comment"></label>
 						<label>by <input ng-model="newComment.author" type="text" size="8" placeholder="author"></label>
-						<button type="submit" value="submit">submit</button>
+						<button id="commentButton" type="submit" value="submit">submit</button>
 					</form>
 				</div>
 			</div>
