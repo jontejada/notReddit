@@ -81,8 +81,8 @@
 						<span>{{post.date}}</span>
 						<span class="ital">{{post.author}}</span>
 					</h4>
-					<p>{{post.description}}</p>
-					<h2 ng-click="toggleCommentViz(post)"><i class="fa fa-comments-o"></i> <ng-pluralize count="post.comments.all.length" when="{0:'no comments', 1:'1 comment','other':'{{post.comments.all.length}} comments'}"></ng-pluralize><!--  {{post.comments.all.length}} comments --></h2>
+					<p class="desc">{{post.description}}</p>
+					<h2 class="commentButton" ng-click="toggleCommentViz(post)"><i class="fa fa-comments-o"></i> <ng-pluralize count="post.comments.all.length" when="{0:'no comments', 1:'1 comment','other':'{{post.comments.all.length}} comments'}"></ng-pluralize><!--  {{post.comments.all.length}} comments --></h2>
 				</div>
 			</div>
  			<div class="comments" ng-show="post.comments.allViz">

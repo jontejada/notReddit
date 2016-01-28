@@ -167,19 +167,18 @@ app.controller('bodyController', function($scope) {
 			newPost.author = 'anon';
 		}
 		newPost.date = moment().calendar();
-		newPost.votes = 1;
+		newPost.votes = 50; //change this to 0 or 1 when date ordering is fixed (and set `$scope.posts.order = '-date';` below)
 		newPost.comments = {
 			allViz: false,
 			all: []
 		};
 		$scope.posts.all.push(newPost);
-		$scope.posts.order = '-date';
 		$scope.showNewPost();
 		$scope.newPost = {};
-		// $scope.newPost.image = null;
+		// $scope.newPost.image = null; //oddly necessary for invalid URLs. `='';` does not work.
 		// console.log($scope.newPost.image)
 		// debugger
-		// http://i.imgur.com/Lx4yJnk.jpg
+		// valid image URL: http://i.imgur.com/Lx4yJnk.jpg
 	};
 	$scope.addComment = function(post, newComment) {	
 		post.comments.all.push(newComment);

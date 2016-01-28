@@ -11,4 +11,10 @@
 - got rid of text highlighting with css rule `::selection { background: transparent; }` found [here](http://stackoverflow.com/questions/826782/css-rule-to-disable-text-selection-highlighting)
 - made a custom directive to pass post image url into css background-image property, found [here](http://stackoverflow.com/questions/13781685/angularjs-ng-src-equivalent-for-background-imageurl)
 
+##to do:
+- fix image input persistence bug
+- set form to be untouched when a post is submitted
+- build animation with ngAnimate 
+
+
 ####started 2016-01-25

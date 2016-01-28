@@ -210,3 +210,12 @@ button:focus {
 .err {
 	color:red;
 }
+
+.commentButton {
+	text-align: right;
+	margin-right: 24px;
+}
+
+.desc {
+	margin-right:10px;
+}
