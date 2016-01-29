@@ -221,7 +221,7 @@ button:focus {
 }
 
 .slide {
-	transition: 3s ease all;
+	transition: 4s ease all;
 }
 
 .slide.ng-enter{

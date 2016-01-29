@@ -10,7 +10,7 @@
 	- related [stackoverflow](http://stackoverflow.com/questions/26015010/angularjs-form-reset-error)
 	- [Angular docs on form binding](https://docs.angularjs.org/guide/<forms id="binding-to-form-and-control-states"></forms>)
 - set form to be untouched when a post is submitted
-- build animation with ngAnimate 
+- build animation with ngAnimate (one animation complete -- new post)
 - DRY out four highlighting functions --> to just one?
 - add routing?
 - add persistence with [Angular Local Storage](http://gregpike.net/demos/angular-local-storage/demo/demo.html#)
