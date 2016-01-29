@@ -14,11 +14,10 @@
 <body ng-controller="bodyController">
 	<div class="main" id="header">
 		<h1><i class="fa fa-reddit"></i> notReddit</h1>
-		<h2 ng-click="showNewPost()"><i class="fa fa-plus-circle"></i> new post</h2>
+		<h2 class="clickMe" ng-click="showNewPost()"><i class="fa fa-plus-circle"></i> new post</h2>
 	</div>
 	<div class="main" ng-show="posts.newPostViz">
-		<!-- <h2>submit a new post:</h2> -->
-
+ 		<button class="formButton" id="popup" ng-click="filler()">add filler text</button>
  		<div class="fullPost">
 			<div class="aPost">
 				<div class="left" back-img="{{newPost.image}}">
@@ -30,7 +29,7 @@
 						</label>
 						<br>
 						<label>author
-							<input name="author" class="newPostInput" ng-model="newPost.author" type="url">
+							<input name="author" class="newPostInput" ng-model="newPost.author" type="text">
 						</label>
 						<br>
 						<label><span class="err" ng-show="newPostForm.image.$invalid-url">(invalid) </span>image URL
@@ -44,8 +43,9 @@
  				</div>
 			</div>
  		</div>
- 		<button id="formButton" form="newPostFormId" type="submit" value="submit" ng-show="newPostForm.$valid">submit</button>
+ 		<button class="formButton" form="newPostFormId" type="submit" value="submit" ng-show="newPostForm.$valid">submit</button>
 	</div>
+
 	<div class="main" id="searchsort" ng-hide="posts.newPostViz">
 		<span id="sorting">sort by
 			<select ng-model="posts.order">
@@ -60,11 +60,11 @@
 				search for 
 				<input type="text" placeholder=""  size="8" ng-model="posts.search">
 			</label>
-			<b id="clearSearch" ng-click="clearSearch()">X</b>
+			<b id="clearSearch" class="clickMe" ng-click="clearSearch()">X</b>
 		</span>
 	</div>
 	<div class="main" id="allPosts" ng-hide="posts.newPostViz">
- 		<div class="fullPost" ng-repeat="post in posts.all | orderBy: posts.order | filter:posts.search">
+ 		<div class="fullPost slide" ng-repeat="post in posts.all | orderBy: posts.order | filter:posts.search">
 			<div class="aPost">
 				<div class="left" back-img="{{post.image}}">
 					<h1 ng-click="vote(post,1)" ng-mouseover='highlightUp(post)' ng-mouseleave='unhighlightUp(post)'>
@@ -82,7 +82,7 @@
 						<span class="ital">{{post.author}}</span>
 					</h4>
 					<p class="desc">{{post.description}}</p>
-					<h2 class="commentButton" ng-click="toggleCommentViz(post)"><i class="fa fa-comments-o"></i> <ng-pluralize count="post.comments.all.length" when="{0:'no comments', 1:'1 comment','other':'{{post.comments.all.length}} comments'}"></ng-pluralize><!--  {{post.comments.all.length}} comments --></h2>
+					<h2 class="commentButton clickMe" ng-click="toggleCommentViz(post)"><i class="fa fa-comments-o"></i> <ng-pluralize count="post.comments.all.length" when="{0:'no comments', 1:'1 comment','other':'{{post.comments.all.length}} comments'}"></ng-pluralize><!--  {{post.comments.all.length}} comments --></h2>
 				</div>
 			</div>
  			<div class="comments" ng-show="post.comments.allViz">
