@@ -1,4 +1,4 @@
-var app = angular.module('redditApp', []);
+var app = angular.module('redditApp', ['ngAnimate']);
 
 app.controller('bodyController', function($scope) {
 	$scope.newComment = {};
@@ -167,7 +167,7 @@ app.controller('bodyController', function($scope) {
 			newPost.author = 'anon';
 		}
 		newPost.date = moment().calendar();
-		newPost.votes = 50; //change this to 0 or 1 when date ordering is fixed (and set `$scope.posts.order = '-date';` below)
+		newPost.votes = 1; //change this to 0 or 1 when date ordering is fixed (and set `$scope.posts.order = '-date';` below)
 		newPost.comments = {
 			allViz: false,
 			all: []
@@ -185,7 +185,13 @@ app.controller('bodyController', function($scope) {
 		post.comments.all.push(newComment);
 		$scope.newComment = {};
 	};
-
+	$scope.filler = function() {
+		console.log('hit');
+		$scope.newPost.title = 'something';
+		$scope.newPost.author = 'Jill';
+		$scope.newPost.image = 'http://www.jontejada.com/assets/DSC_1023.jpg';
+		$scope.newPost.description = 'something something';
+	}
 });
 
 

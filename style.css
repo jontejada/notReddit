@@ -188,7 +188,7 @@ input::selection { background: black; }
 	border-radius: 4px;
 }
 
-#formButton {
+.formButton {
 	background-color: rgb(136,195,234);
 	/*border-style: none;*/
 	height:60px;
@@ -218,4 +218,52 @@ button:focus {
 
 .desc {
 	margin-right:10px;
+}
+
+.slide {
+	transition: 4s ease all;
+}
+
+.slide.ng-enter{
+	
+	/*box-shadow: 10px 10px 100px rgba(1,1,1,0.2);*/
+	position: relative;
+	top:-2500px;
+    opacity: 1;
+}
+.slide.ng-enter.ng-enter-active{
+    top:0;
+    opacity: 1;
+}
+
+.slide.ng-leave{
+    /*transition: 0.5s ease all;*/
+    opacity: 1;
+}
+
+.slide.ng-leave.ng-leave-active{
+    opacity: 0;
+}
+/*
+.clickMe {
+	text-shadow:0 0 6px #C3F3C0;
+   -webkit-text-stroke: 1px #C3F3C0;
+    text-shadow:
+    -1px -1px 0 white,
+    1px -1px 0 white,
+    -1px 1px 0 white,
+    1px 1px 0 white;
+}
+*/
+
+#popup {
+	/*position:absolute;*/
+	/*left:50px;*/
+	/*bottom:50px;*/
+	/*height: 100px;*/
+	/*width: 50%;*/
+	/*background-color: white;*/
+	/*border-radius: 10px;*/
+
+
 }
