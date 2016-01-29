@@ -1,4 +1,4 @@
-#notReddit with angular
+#[notReddit](jontejada.com/notReddit) built with angular
 
 ##interesting stuff
 - got rid of text highlighting with css rule `::selection { background: transparent; }` found [here](http://stackoverflow.com/questions/826782/css-rule-to-disable-text-selection-highlighting)
