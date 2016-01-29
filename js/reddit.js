@@ -187,10 +187,10 @@ app.controller('bodyController', function($scope) {
 	};
 	$scope.filler = function() {
 		console.log('hit');
-		$scope.newComment.title = 'something';
-		$scope.newComment.author = 'Jill';
-		$scope.newComment.image = 'http://www.jontejada.com/assets/DSC_1023.jpg';
-		$scope.newComment.description = 'something something';
+		$scope.newPost.title = 'something';
+		$scope.newPost.author = 'Jill';
+		$scope.newPost.image = 'http://www.jontejada.com/assets/DSC_1023.jpg';
+		$scope.newPost.description = 'something something';
 	}
 });
 
